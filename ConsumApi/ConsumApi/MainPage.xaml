@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ConsumApi"
+             x:Class="ConsumApi.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="LvResults"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Source="{Binding medium}"
+                                HeightRequest="60"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="60"
+                                Aspect="AspectFill"
+                                Grid.RowSpan="2"
+                                />
+                            <Label Text="{Binding fisrt}" Grid.Column="1" VerticalOptions="End"
+                                    TextColor="#f35e20" FontSize="20"/>
+                            <Label Text="{Binding last}" Grid.Column="1" Grid.Row="1"
+                                    VerticalOptions="Start"
+                                    TextColor="#503026" FontSize="15" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

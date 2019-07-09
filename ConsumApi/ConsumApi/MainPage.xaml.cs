@@ -16,6 +16,7 @@ namespace ConsumApi
 {
     public partial class MainPage : ContentPage
     {
+        //lo hemos mejorado
         private viewModel.UsersViewModel users=new viewModel.UsersViewModel();
         public MainPage()
         {

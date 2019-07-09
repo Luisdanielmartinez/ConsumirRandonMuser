@@ -62,7 +62,7 @@ namespace ConsumApi.model
         public string NombreCompleto{
             get { return $"{title}. {first} {last}"; }
                }
-
+        //este es mi model usuario
        
     }
 }

@@ -13,6 +13,7 @@ namespace ConsumApi.Entity
 {
     class EntityResults
     {
+        //este es mi servicio
         public ObservableCollection<Usuario> getResults()
         {
 

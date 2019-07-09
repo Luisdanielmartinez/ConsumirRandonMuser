@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ConsumApi.model
 {
+    //la clase donde van todos los datos que obtengo de la respuesta
     public class Name
     {
         public string title { get; set; }

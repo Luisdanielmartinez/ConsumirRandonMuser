@@ -13,6 +13,7 @@ namespace ConsumApi.view
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailUser : ContentPage
 	{
+        //la clase detail
 		public DetailUser(Usuario usuario)
 		{
 			InitializeComponent ();

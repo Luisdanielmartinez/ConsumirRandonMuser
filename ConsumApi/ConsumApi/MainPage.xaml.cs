@@ -16,38 +16,20 @@ namespace ConsumApi
 {
     public partial class MainPage : ContentPage
     {
-
+        private viewModel.UsersViewModel users=new viewModel.UsersViewModel();
         public MainPage()
         {
             InitializeComponent();
-            obtenerResult();
+            BindingContext = users;
 
             LvResults.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
-                var item = e.SelectedItem as Usuario;
-                Navigation.PushAsync(new view.DetailUser(item.fisrt, item.last, item.medium));
+                model.Usuario item = e.SelectedItem as Usuario;
+                Navigation.PushAsync(new view.DetailUser(item));
               
             };
         }
        
-        private async void obtenerResult() {
-            // getById();
-
-            try
-            {
-                Entity.EntityResults entityResults = new Entity.EntityResults();
-                var result = await entityResults.getResults("https://randomuser.me/api/?results=20");
-                if (result != null)
-                {
-                    LvResults.ItemsSource = result;
-
-                }
-            }
-            catch (Exception e)
-            {
-               await DisplayAlert("alert", "error", "Ok");
-            }
-        }
         
 
       

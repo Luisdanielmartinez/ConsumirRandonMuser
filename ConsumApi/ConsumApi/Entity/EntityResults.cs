@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,30 +13,28 @@ namespace ConsumApi.Entity
 {
     class EntityResults
     {
-        public async Task<List<Usuario>> getResults(string url)
+        public ObservableCollection<Usuario> getResults()
         {
 
-            List<Usuario> usuarios = new List<Usuario>();
+            ObservableCollection<Usuario> usuarios = new ObservableCollection<Usuario>();
           
             WebClient webClient = new WebClient();
 
-            var response = webClient.DownloadString(url);
+            var response = webClient.DownloadString("https://randomuser.me/api/?results=20");
            var Person= JsonConvert.DeserializeObject<RootObject>(response);
             foreach (var i in Person.results) {
                 Usuario users = new Usuario();
-                users.fisrt=i.name.fisrt;
-                users.last = i.name.last;
-                users.medium = i.picture.medium;
+                users.Last = i.name.last;
+                users.First = i.name.first;
+                users.Medium = i.picture.medium;
+                users.Phone = i.phone;
+                users.Email = i.email;
+                users.Title = i.name.title;
                 usuarios.Add(users);
             }
             return usuarios;
 
         }
 
-        public HttpClient getCliente()
-        {
-            HttpClient client = new HttpClient();
-            return client;
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumApi.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,10 @@ namespace ConsumApi.view
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailUser : ContentPage
 	{
-		public DetailUser (string first,string last,string medium)
+		public DetailUser(Usuario usuario)
 		{
 			InitializeComponent ();
-            lb_first.Text = first;
-            lb_last.Text = last;
-            img_users.Source = new UriImageSource() {
-                Uri = new Uri(medium)
-            };
+            BindingContext = usuario;
 		}
 	}
 }

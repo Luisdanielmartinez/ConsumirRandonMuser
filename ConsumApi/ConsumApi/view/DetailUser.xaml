@@ -3,32 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConsumApi.view.DetailUser">
     <ContentPage.Content>
-
         <StackLayout Orientation="Vertical">
-            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Label Text="Detail of User" FontSize="25" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+            
                 <Image
-                                x:Name="img_users"
-                                HeightRequest="60"
+                                Source="{Binding Medium}"
+                                HeightRequest="150"
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
-                                WidthRequest="60"
-                                Aspect="AspectFill"
-                                Grid.RowSpan="2"
+                                WidthRequest="150"
+                               
                                 />
-                <Label x:Name="lb_first" Grid.Column="1" VerticalOptions="End"
-                                    TextColor="#f35e20" FontSize="20"/>
-                <Label x:Name="lb_last" Grid.Column="1" Grid.Row="1"
-                                    VerticalOptions="Start"
-                                    TextColor="#503026" FontSize="15" />
-            </Grid>
+                <Label Text="Nombre" FontSize="18" TextColor="Black" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                <Label Text="{Binding First }" 
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       TextColor="#f35e20" FontSize="15"/>
+                <Label Text="Apellido" FontSize="18" TextColor="Black" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                <Label Text="{Binding Last}"
+                     VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                     TextColor="#f35e20" FontSize="15" />
+                <Label Text="Telefono" FontSize="18" TextColor="Black" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                <Label Text="{Binding Phone}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                     TextColor="#f35e20" FontSize="15" />
+                <Label Text="Email" FontSize="18" TextColor="Black" HorizontalOptions="Center"
+                       VerticalOptions="Center"></Label>
+                <Label Text="{Binding Email}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                     TextColor="#f35e20" FontSize="15" />
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

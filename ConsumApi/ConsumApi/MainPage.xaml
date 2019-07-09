@@ -4,8 +4,12 @@
              xmlns:local="clr-namespace:ConsumApi"
              x:Class="ConsumApi.MainPage">
 
-    <StackLayout>
-        <ListView x:Name="LvResults"
+    <StackLayout Orientation="Vertical">
+        <StackLayout>
+            <Label Text="Consume Random User" TextColor="Black" FontSize="30"></Label>
+        </StackLayout>
+        <ListView x:Name="LvResults" 
+                  ItemsSource="{Binding listUsers}"
                   HasUnevenRows="True"
                   SeparatorVisibility="None"
                   >
@@ -22,7 +26,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image
-                                Source="{Binding medium}"
+                                Source="{Binding Medium}"
                                 HeightRequest="60"
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
@@ -30,9 +34,9 @@
                                 Aspect="AspectFill"
                                 Grid.RowSpan="2"
                                 />
-                            <Label Text="{Binding fisrt}" Grid.Column="1" VerticalOptions="End"
+                            <Label Text="{Binding NombreCompleto}" Grid.Column="1" VerticalOptions="End"
                                     TextColor="#f35e20" FontSize="20"/>
-                            <Label Text="{Binding last}" Grid.Column="1" Grid.Row="1"
+                            <Label Text="{Binding Phone}" Grid.Column="1" Grid.Row="1"
                                     VerticalOptions="Start"
                                     TextColor="#503026" FontSize="15" />
                         </Grid>
